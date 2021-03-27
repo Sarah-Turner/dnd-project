@@ -9,7 +9,7 @@ int main() {
         std::cout << "5. Exit" << endl;
         std::cout << "Enter Choice: ";
         std::cin >> response;
-    } while (response < 1 || response > 5)
+    } while (response < 1 || response > 5);
 
     switch (response)
     {
