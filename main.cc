@@ -1,3 +1,4 @@
+#include <iostream>
 int main() {
     char response;
     std::cout << "1. Create Enemy Type" << endl;
