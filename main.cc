@@ -1,4 +1,6 @@
 #include <iostream>
+#include "enemy_type.h"
+#include "dice.h"
 
 void CreateEnemyType() {
 
@@ -44,6 +46,6 @@ int main() {
                 break;
         }
     } 
-    std::cout << "Goodbye!" std::endl;
+    std::cout << "Goodbye!" << std::endl;
     return 0;
 }
