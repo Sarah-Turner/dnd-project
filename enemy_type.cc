@@ -9,13 +9,17 @@ void EnemyType::AddAttack(const std::string&  name, const std::string&  descript
 std::string EnemyType::Attacks() {
     std::ostringstream oss;
     for (const auto& attack : attacks_) {
-        oss << attack.name << std::endl << attack.description << std::endl << "Damage: " << attack.num_dice << 'd' << attack.dice_sides << '+' << ability_mods_[attack.modifier];
+        oss << attack.name << std::endl << attack.description << std::endl << "Damage: " << attack.num_dice << 'd' << attack.dice_sides;
+        if (!(attack.modifier == EnemyType::Ability::UNKNOWN)) {
+            oss << '+' << ability_mods_[attack.modifier];
+        }
+        oss << std::endl;
     }
     return oss.str();
 }
 std::string EnemyType::Hp() {
     std::ostringstream oss;
-    oss << num_hp_dice_ << 'd' << hp_dice_sides_;
+    oss << num_hp_dice_ << 'd' << hp_dice_sides_ << std::endl;
     return oss.str();
 }
 std::string EnemyType::Skills() {
@@ -28,6 +32,7 @@ std::string EnemyType::Skills() {
 
 std::string EnemyType::AbilityToString(EnemyType::Ability ability) {
     switch(ability) {
+        case EnemyType::Ability::UNKNOWN: return "UNKNOWN";
         case EnemyType::Ability::STR: return "STR";
         case EnemyType::Ability::DEX: return "DEX";
         case EnemyType::Ability::CON: return "CON";
@@ -35,5 +40,6 @@ std::string EnemyType::AbilityToString(EnemyType::Ability ability) {
         case EnemyType::Ability::WIS: return "WIS";
         case EnemyType::Ability::CHA: return "CHA";
     }
+    return "UNKNOWN";
 }
 }

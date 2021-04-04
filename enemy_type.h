@@ -1,4 +1,4 @@
-#pragma
+#pragma once
 #include <string>
 #include <vector>
 #include <unordered_map>
@@ -6,7 +6,7 @@
 namespace sarah {
 class EnemyType {
 public:
-    enum class Ability { STR, DEX, CON, INT, WIS, CHA };
+    enum class Ability { UNKNOWN, STR, DEX, CON, INT, WIS, CHA };
     struct Attack {
         std::string name;
         std::string description;
