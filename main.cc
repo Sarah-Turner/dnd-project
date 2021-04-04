@@ -5,9 +5,11 @@
 
 void CreateEnemyType(std::vector<sarah::EnemyType>& enemy_types) {
     std::string name, enemy_class;
-    std::cout << "Creating a new enemy type: " << std::endl << "Enter the type name (Ex: Bandit Captain): ";
+    std::cout << "Creating a new enemy type. " << std::endl << "Enter the type name (Ex: Bandit Captain): " << std::endl;
+    // Clear the cin buffer so we can grab the an entire line of input.
+    std::cin.clear();
+    std::cin.sync();
     std::getline(std::cin, name);
-    std::cout << std::endl;
     std::cout << "Enter the class of enemy (Ex: Humanoid, Elemental, Beast, etc): ";
     std:: cin >> enemy_class;
     std::cout << std::endl;
@@ -53,6 +55,9 @@ void CreateEnemyType(std::vector<sarah::EnemyType>& enemy_types) {
         std::string desc;
         char modifier;
         std::cout << "Enter attack name (Ex: Bite, Scratch, 1H Scimitar Attack): ";
+        // Clear the cin buffer so we can grab the an entire line of input.
+        std::cin.clear();
+        std::cin.sync();
         std::getline(std::cin, name);
         std::cout << std::endl << "(Optionally) Enter a description for the attack (Ex: the enemy swings their scimitar at you): ";
         std::getline(std::cin, desc);
@@ -81,7 +86,10 @@ void CreateEnemyType(std::vector<sarah::EnemyType>& enemy_types) {
 }
 
 void ListCreatedTypes(const std::vector<sarah::EnemyType>& enemy_types) {
-
+    for (const auto& enemy : enemy_types) {
+        std::cout << "Type: " << enemy.Name();
+        std::cout << "Class: " << enemy.CreatureClass();
+    }
 }
 
 void GenerateEnemy() {
@@ -94,7 +102,7 @@ void ListEnemies() {
 
 int main() {
     std::vector<sarah::EnemyType> enemy_types;
-    char response = 0;
+    int response = 0;
     while (response != 5) {
         std::cout << "1. Create Enemy Type" << std::endl;
         std::cout << "2. List Created Types" << std::endl;

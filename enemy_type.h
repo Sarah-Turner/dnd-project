@@ -26,11 +26,11 @@ public:
     }
 
     // Functions for printing out an EnemyType in a structured way.
-    std::string Name() { return type_name_; }
-    std::string CreatureClass() { return creature_class_; }
-    std::string Attacks();
-    std::string Hp();
-    std::string Skills();
+    std::string Name() const { return type_name_; }
+    std::string CreatureClass() const { return creature_class_; }
+    std::string Attacks() const;
+    std::string Hp() const;
+    std::string Skills() const;
 
     static std::string AbilityToString(Ability ability);
 
