@@ -9,7 +9,7 @@ void EnemyType::AddAttack(const std::string&  name, const std::string&  descript
 std::string EnemyType::Attacks() const {
     std::ostringstream oss;
     for (const auto& attack : attacks_) {
-        oss << attack.name << std::endl << attack.description << std::endl << "Damage: " << attack.num_dice << 'd' << attack.dice_sides;
+        oss << attack.name << " (" << attack.description << ") - Damage: " << attack.num_dice << 'd' << attack.dice_sides;
         if (!(attack.modifier == EnemyType::Ability::UNKNOWN)) {
             oss << '+' << ability_mods_.at(attack.modifier);
         }
