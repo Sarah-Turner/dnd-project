@@ -19,7 +19,7 @@ std::string EnemyType::Attacks() const {
 }
 std::string EnemyType::Hp() const {
     std::ostringstream oss;
-    oss << num_hp_dice_ << 'd' << hp_dice_sides_ << std::endl;
+    oss << num_hp_dice_ << 'd' << hp_dice_sides_;
     return oss.str();
 }
 std::string EnemyType::Skills() const {

@@ -87,8 +87,11 @@ void CreateEnemyType(std::vector<sarah::EnemyType>& enemy_types) {
 
 void ListCreatedTypes(const std::vector<sarah::EnemyType>& enemy_types) {
     for (const auto& enemy : enemy_types) {
-        std::cout << "Type: " << enemy.Name();
-        std::cout << "Class: " << enemy.CreatureClass();
+        std::cout << "Type: " << enemy.Name() << std::endl;
+        std::cout << "Class: " << enemy.CreatureClass() << std::endl;
+        std::cout << "HP: " << enemy.Hp() << std::endl;
+        std::cout << "Attacks: " << enemy.Attacks();
+        std::cout << "Ability Modifiers: " << enemy.Skills();
     }
 }
 
